@@ -33,41 +33,58 @@
           <a class="nav-link" href="{% url 'contact' %}">Contacts</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">A propos<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{% url 'about' %}">A propos<span class="sr-only">(current)</span></a>
         </li>
       </ul>
       <div class="form-inline my-2 my-lg-0">
-        <button class="btn btn-outline-warning mr-sm-3"  onclick="document.getElementById('id01').style.display='block'" type="submit" >Connexion</button>
+        <button class="btn btn-outline-warning mr-sm-3"  onclick="document.getElementById('id01').style.display='block'" type="submit" >Inscription</button>
       </div>
       <div class="form-inline my-2 my-lg-0">
-        <button class="btn btn-outline-warning mr-sm-3 my-1 my-sm-6" onclick="document.getElementById('id02').style.display='block'" type="submit">Inscription</button>
+        <button class="btn btn-outline-warning mr-sm-3 my-1 my-sm-6" onclick="document.getElementById('id02').style.display='block'" type="submit">Connexion</button>
       </div>
       <div id="id01" class="modal">
-        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-        <form class="modal-content" action="/action_page.php">
-          <div class="container">
-            <h1>Sign Up</h1>
+        
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+              <form class="modal-content" action="/action_page.php">
+                <div class="container">
+          
+                  <h1>Sign Up</h1>
+                  <hr>
+                
+                  <input type="text" placeholder="Enter Votre prenom" name="prenom" required>
+                  <label for="email"><b>Nom</b></label>
+                  <input type="text" placeholder="Enter nom" name="email" required>
+                  <label for="email"><b>Email</b></label>
+                  <input type="text" placeholder="Enter Email" name="email" required>
+                  <label for="cars"><b>Département:</b></label>
+                  <select name="cars" id="cars">
+                    <option value="gem">Génie Electromécanique</option>
+                    <option value="gc">Génie Civil</option>
+                    <option value="git">Génie Informatique et Telecom</option>
+                    <option value="tc">Tronc Commun</option>
+                  </select>
+                  <br>
+                  
+                  <input type="password" placeholder="Enter Password" name="psw" required>
             
-            <hr>
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
-      
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-      
-            <label for="psw-repeat"><b>Repeat Password</b></label>
-            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                  <label for="psw-repeat"><b>Repeat Password</b></label>
+                  <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                  
+                  <label>
+                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                  </label>
+                  
+                  <div class="clearfix">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                    <button type="submit" class="signupbtn">Sign Up</button>
+                  </div>
+                </div>
+              </form>
             
-            <label>
-              <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-            </label>
-            
-            <div class="clearfix">
-              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-              <button type="submit" class="signupbtn">Sign Up</button>
-            </div>
           </div>
-        </form>
+          
+            </form>
+          
       </div>
 
       
@@ -90,6 +107,8 @@
             </div>
           </div>
         </form>
+      </div>
+        </div>
       </div>
       
     </div>
