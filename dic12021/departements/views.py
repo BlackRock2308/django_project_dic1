@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from .models import DepartementModel
 # Create your views here.
 
 
 def departementGit(request):
-    context = {'git': "Code for a better life dear"}
+    departements = DepartementModel.objects.all()
+    context = {'git': "Code for a better life dear", "departements" : departements}
     return render(request, "departements/git.html", context)
 
 

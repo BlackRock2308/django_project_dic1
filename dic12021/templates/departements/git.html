@@ -2,6 +2,17 @@
 
 {% block content %}
 
-<h1> {{git}}</h1>
+<h1> {{ git }} </h1>
 
-{% endblock%}
+<div style="margin-left :30px ;">
+    {% for departement in departements %}
+    <ul>
+            <li>{{ departement.nom |upper}}</li> <li>{{ departement.email }}</li> <li>{{ departement.telephone }}</li>
+            
+            <hr>
+    </ul>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

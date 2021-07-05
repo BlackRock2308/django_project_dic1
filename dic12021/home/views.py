@@ -8,7 +8,8 @@ def home(request):
     return render(request, "home/index.html", context)
 
 def contact(request):
-    context = {}
+    mapbox_access_token = 'pk.eyJ1IjoibWJheWVtYzIiLCJhIjoiY2txcWRhMXh5MWc4ODJvcHF6Z3dudzdvbyJ9.NYhwiv_iLjOux8bg9e99Wg'
+    context = {'mapbox_access_token': mapbox_access_token}
     return render(request, "home/contact.html", context)
 
 def about(request):

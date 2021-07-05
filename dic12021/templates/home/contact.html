@@ -28,9 +28,19 @@
     </div>
 
     <div class="alert alert-warning mt-3 text-light" role="alert" style="background-color:#FB8C00;">
-        <h3>Localisation</h3>
         
+        <h3>Localisation</h3>
     </div>
+        <div id='map' style='width: 100%; height: 500px;'></div>
+        <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoibWJheWVtYzIiLCJhIjoiY2txcWRhMXh5MWc4ODJvcHF6Z3dudzdvbyJ9.NYhwiv_iLjOux8bg9e99Wg';
+        var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-16.9651, 14.7954],
+        zoom: 9
+        });
+        </script>
 
 </div>
   
