@@ -166,6 +166,8 @@ border: 1px solid #f1f1f1;
 margin-bottom: 25px;
 }
 
+
+
 /* The Close Button (x) */
 .close {
 position: absolute;
@@ -195,3 +197,4 @@ display: table;
    width: 100%;
 }
 }
+

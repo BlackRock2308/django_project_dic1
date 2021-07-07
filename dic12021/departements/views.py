@@ -1,11 +1,15 @@
 from django.shortcuts import render
-from .models import DepartementModel
+from .models import *
+from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
 
 
 def departementGit(request):
     departements = DepartementModel.objects.all()
-    context = {'git': "Code for a better life dear", "departements" : departements}
+    unite_enseignement = UniteEnseignementModel.objects.all()
+    enseignants = EnseignantModel.objects.filter(chef_departement = True)
+    
+    context = {"depart":"GIT",'enseignants': enseignants, "departements" : departements, "ues":unite_enseignement}
     return render(request, "departements/git.html", context)
 
 

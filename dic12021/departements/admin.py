@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import DepartementModel
+from .models import *
 
 # Register your models here.
 
@@ -14,5 +14,14 @@ class DepartementAdmin(admin.ModelAdmin):
 
 admin.AdminSite.site_header = "Administration du site de l'EPT"
 admin.site.register(DepartementModel, DepartementAdmin, )
+admin.site.register(ClasseModel)
+admin.site.register(EtudiantModel)
+admin.site.register(UniteEnseignementModel)
+admin.site.register(MatiereModel)
+admin.site.register(InscriptionEleve)
+admin.site.register(EnseignantModel )
+
 
 #Change the navbar dear
+#username : mbayecn
+#passwword : gnilanesene

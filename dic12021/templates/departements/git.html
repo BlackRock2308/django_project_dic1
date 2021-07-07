@@ -2,17 +2,90 @@
 
 {% block content %}
 
-<h1> {{ git }} </h1>
 
-<div style="margin-left :30px ;">
-    {% for departement in departements %}
-    <ul>
-            <li>{{ departement.nom |upper}}</li> <li>{{ departement.email }}</li> <li>{{ departement.telephone }}</li>
-            
-            <hr>
-    </ul>
-    {% endfor %}
+<div class="container">
+
+<div class="row">
+    <div class="col-md-12">
+        {% for enseignant in enseignants %} 
+        <h5 class="text-center">BIENVENUE AU DEPARTEMENT{{ depart }} </h5>
+        {% endfor%}
+        <hr>
+        <div class="card card-body">
+            <a class="btn btn-primary btn-sm btn-block" href="">Chef du département</a>
+            <table class="table table-sm table-dark">
+                <tr>
+                    <th></th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Mail</th>
+                    <th>Phone</th>
+                </tr>
+                {% for enseignant in enseignants %}  
+                    <tr>
+                        <td><a class="btn btn-sm btn-info" href="#">More</a></td>
+                        <td>{{ enseignant.first_name }}</td>
+                        <td>{{ enseignant.last_name |upper }}</td>
+                        <td>{{ enseignant.mail_user }}</td>
+                        <td>{{ enseignant.contact_prof }}</td>
+                    </tr>
+                {% endfor%}
+            </table>
+        </div>
+    </div>
+
+
+<!-- <div class="row">
+    <div class="col-md-6">
+        <h5 class="text-center">DEPARTEMENTS </h5>
+        <hr>
+        <div class="card card-body">
+            <a class="btn btn-primary btn-sm btn-block" href="">Départements</a>
+            <table class="table table-sm">
+                <tr>
+                    <th></th>
+                    <th>Nom</th>
+                    <th>Mail</th>
+                    <th>Phone</th>
+                </tr>
+                {% for departement in departements %}
+                    <tr>
+                        <td><a class="btn btn-sm btn-info" href="#">More</a></td>
+                        <td>{{ departement.nom |upper}}</td>
+                        <td>{{ departement.email }}</td>
+                        <td>{{ departement.telephone }}</td>
+                    </tr>
+                {% endfor%}
+            </table>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <h5 class="text-center">UE </h5>
+        <hr>
+        <div class="card card-body">
+            <a class="btn btn-primary btn-sm btn-block" href="">Create UE</a>
+            <table class="table table-sm">
+                <tr>
+                    <th> </th>
+                    <th>Code UE</th>
+                    <th>Nom UE</th>
+                    <th>CLasse UE</th>
+                </tr>
+                {% for ue in ues %}
+                    <tr>
+                        <td><a class="btn btn-sm btn-info" href="#">View</a></td>
+                        <td>{{ ue.code_ue}}</td>
+                        <td>{{ ue.nom_ue }}</td>
+                        <td>{{ ue.id_classe }}</td>
+                    </tr>
+                {% endfor%}
+            </table>
+        </div>
+    </div>
+</div> -->
+
 </div>
-
+{% include 'departements/menu_nav_dep.html' %}
 
 {% endblock %}
