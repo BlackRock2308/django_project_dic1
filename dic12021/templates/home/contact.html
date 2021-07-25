@@ -1,5 +1,5 @@
 {% extends 'home/base.html' %}
-
+{% load i18n%}
 {% block content %}
 
 <div class="container"> 
@@ -11,7 +11,7 @@
     <div class="col-md">
         <ul class="list-unstyled">
             <li><img src=""><i class="fa fa-envelope"></i><strong> Mail:</strong> ept@ept.sn </li>
-            <li><i class="fa fa-phone"></i> <strong>Téléphone :</strong> 00221 33 951 15 48</li>
+            <li><i class="fa fa-phone"></i> <strong> Téléphone :</strong> 00221 33 951 15 48</li>
             <li><i class="fa fa-home"></i> <strong>Fax:</strong> 00221 33 951 14 76</li>
             <li><i class="fa fa-institution"></i> <strong> Postale:</strong> BP A10, Thiès Sénégal</li>
         </ul>
@@ -21,16 +21,16 @@
         <h3>Accès</h3>
     </div>
     <div class="col-md">
-        <p>
+        <p> {% blocktrans %}
             L'EPT est situé dans la région de Thiès (environ 70 kms de Dakar, Sénégal), sur un terrain
             de plus de 400 hectares. Son campus comporte des locaux d'enseignement pédagogiques, de recherche,
-            d'exploitation et d'hébergement à l'usage des étudiants et d'une partie du personnel.
+            d'exploitation et d'hébergement à l'usage des étudiants et d'une partie du personnel. {% endblocktrans %}
         </p>
     </div>
 
     <div class="alert alert-warning mt-3 text-light" role="alert" style="background-color:#FB8C00;">
         
-        <h3>Localisation</h3>
+        <h3>{% trans 'Localisation' %}</h3>
     </div>
     <div class="container">
             <div class="row">
@@ -50,17 +50,16 @@
                 <div class="col-lg-5">
                     <form class="modal-content" >
                         <div class="container">
-                          <h4>Trouver directement l'itinéraire depuis votre adresse jusqu'à l'EPT</h4>
+                          <h4>{% trans "Trouver directement l'itinéraire depuis votre adresse jusqu'à l'EPT" %}</h4>
                           <hr>
-                          <label for="email"><b>ADRESSE</b></label>
+                          <label for="email"><b>{% trans 'ADRESSE' %}</b></label>
                           <input type="text" placeholder="Ville/Région" name="adresse" required>
                     
                           <label for="psw"><b>BP</b></label>
                           <input type="password" placeholder="Boite Postale" name="bp" required>
                   
                           <div class="clearfix">
-                            <button type="button" class="btn btn-outline-warning">Search</button>
-                           
+                            <button type="button" class="btn btn-outline-warning">Search</button>  
                           </div>
                         </div>
                       </form>

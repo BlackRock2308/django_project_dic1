@@ -1,0 +1,184 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-25 21:03+0000\n"
+"PO-Revision-Date: 2021-07-25 20:50:13\n"
+"Last-Translator: Server <root@localhost>\n"
+"Language-Team: English <webmaster@localhost>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\templates\departements\enseignant_details.html:12
+msgid "Enseignant"
+msgstr "Teacher"
+
+#: .\templates\departements\enseignant_details.html:14
+#: .\templates\departements\student_details.html:14
+msgid "Prenom"
+msgstr "First name"
+
+#: .\templates\departements\enseignant_details.html:15
+#: .\templates\departements\meca.html:18 .\templates\departements\meca.html:51
+#: .\templates\departements\student_details.html:15
+msgid "Nom"
+msgstr "Last name"
+
+#: .\templates\departements\enseignant_details.html:16
+#: .\templates\departements\student_details.html:16
+msgid "Email"
+msgstr "Email"
+
+#: .\templates\departements\enseignant_details.html:21
+msgid "Information de l'enseignant"
+msgstr "Informations about teacher"
+
+#: .\templates\departements\enseignant_details.html:23
+msgid "Matières"
+msgstr "Modules"
+
+#: .\templates\departements\enseignant_details.html:25
+msgid "Chef département"
+msgstr "Departments"
+
+#: .\templates\departements\enseignant_details.html:32
+#: .\templates\departements\student_details.html:31
+msgid "Informations Personnelles"
+msgstr "Personnal informations"
+
+#: .\templates\departements\enseignant_details.html:34
+#: .\templates\departements\meca.html:21
+msgid "Téléphone"
+msgstr "phone number"
+
+#: .\templates\departements\enseignant_details.html:35
+#: .\templates\departements\student_details.html:34
+msgid "Lieu de naissance"
+msgstr "Place of birth"
+
+#: .\templates\departements\git.html:11 .\templates\departements\meca.html:11
+msgid "BIENVENUE AU DEPARTEMENT"
+msgstr "WELCOME TO DEPARTMENT"
+
+#: .\templates\departements\meca.html:15
+#, fuzzy
+#| msgid "Chef département"
+msgid "Chef du département"
+msgstr "Departments"
+
+#: .\templates\departements\meca.html:19 .\templates\departements\meca.html:52
+msgid "Prénom"
+msgstr "First name"
+
+#: .\templates\departements\meca.html:20
+msgid "Mail"
+msgstr "Email"
+
+#: .\templates\departements\meca.html:47
+msgid "Enseignant du département"
+msgstr "Departments"
+
+#: .\templates\departements\student_details.html:12
+msgid "Etudiant"
+msgstr "Student"
+
+#: .\templates\departements\student_details.html:21
+msgid "Information de l'étudiant"
+msgstr "Informations about teacher"
+
+#: .\templates\departements\student_details.html:23
+msgid "Département"
+msgstr "Departments"
+
+#: .\templates\departements\student_details.html:24
+msgid "Classe"
+msgstr "Class"
+
+#: .\templates\departements\student_details.html:33
+msgid "Date de naissance"
+msgstr "Date of birth"
+
+#: .\templates\home\about.html:7
+msgid "Présentation"
+msgstr "Presentation"
+
+#: .\templates\home\contact.html:24
+msgid ""
+"\n"
+"            L'EPT est situé dans la région de Thiès (environ 70 kms de "
+"Dakar, Sénégal), sur un terrain\n"
+"            de plus de 400 hectares. Son campus comporte des locaux "
+"d'enseignement pédagogiques, de recherche,\n"
+"            d'exploitation et d'hébergement à l'usage des étudiants et d'une "
+"partie du personnel. "
+msgstr ""
+
+#: .\templates\home\contact.html:33
+msgid "Localisation"
+msgstr "Location"
+
+#: .\templates\home\contact.html:53
+msgid "Trouver directement l'itinéraire depuis votre adresse jusqu'à l'EPT"
+msgstr ""
+
+#: .\templates\home\contact.html:55
+msgid "ADRESSE"
+msgstr "ADDRESS"
+
+#: .\templates\home\image_back.html:5
+msgid ""
+" Sagesse - Devoir </h2><p>L'école polytechnique de Thiès,connus sous le "
+"sigme de EPT,<br> est une\n"
+"            grande école d'ingénieurs implantée au Sénégal.<br> Créée en "
+"1973 par Léopold Sédar Senghor, elle forme<br> des ingénieurs dans les\n"
+"            domaines du génie civil, <br>du génie éléctromécanique(avec une "
+"filière Aéronautique)<br> et du génie informatique et\n"
+"            télécommunications "
+msgstr ""
+
+#: .\templates\home\navbar.html:14
+msgid "Accueil"
+msgstr "Home"
+
+#: .\templates\home\navbar.html:18
+msgid "Départements"
+msgstr "Departments"
+
+#: .\templates\home\navbar.html:21
+msgid "GENIE ELECTROMECANIQUE"
+msgstr "MECANICHAL  ENGINEERING"
+
+#: .\templates\home\navbar.html:23
+msgid "GENIE INFORMATIQUE ET TELECOM"
+msgstr "COMPUTER SCIENCE"
+
+#: .\templates\home\navbar.html:25
+msgid "GENIE CIVIL"
+msgstr "CIVIL ENGINEERING"
+
+#: .\templates\home\navbar.html:27
+msgid "AERONAUTIQUE"
+msgstr "AERONAUTICAL"
+
+#: .\templates\home\navbar.html:29
+msgid "TRONC COMMUN"
+msgstr "COMMON STREAM"
+
+#: .\templates\home\navbar.html:39
+msgid "A propos"
+msgstr "About"
+
+#: .\templates\home\navbar.html:57
+msgid "DECONNEXION"
+msgstr "Logout"
+
+#: .\templates\home\navbar.html:62
+msgid "CONNEXION"
+msgstr "Login"
+
+#: .\templates\home\navbar.html:68
+msgid "INSCRIPTION"
+msgstr "REGISTRATION"

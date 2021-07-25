@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+from django.utils.translation import gettext_lazy as _
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'departements.apps.DepartementsConfig',
     'rest_framework',
     'rest_framework.authtoken',
+    "translation_manager",
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -109,8 +111,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
 LANGUAGE_CODE = 'fr'
-LANGUAGES = (("en", "Anglais"),
-            ("fr", "Français")
+
+LANGUAGES = (
+        ('fr', ('Francais')),
+         ('en', ('English'))
             )
 LOCALE_PATHS = (BASE_DIR / "locale",
                 )

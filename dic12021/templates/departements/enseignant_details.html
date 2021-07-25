@@ -1,5 +1,5 @@
 {% extends "home/base.html" %}
-
+{% load i18n%}
 {% block content %}
 
 
@@ -9,30 +9,30 @@
 <div class="row">
     <div class="col-md">
         <div class="card card-body" >
-            <h5>Enseignant :</h5>
+            <h5>{% trans 'Enseignant' %}:</h5>
             <hr>
-            <p>Prenom : {{ profs.first_name }}</p>
-            <p>Nom : {{ profs.last_name }}</p>
-            <p>Email : {{ profs.mail_user }}</p>
+            <p>{% trans 'Prenom' %}: {{ profs.first_name }}</p>
+            <p>{% trans 'Nom' %}: {{ profs.last_name }} </p>
+            <p>{% trans 'Email' %}: {{ profs.mail_user }} </p>
         </div>
     </div>
     <div class="col-md">
         <div class="card card-body">
-            <h5>Information de l'enseignant :</h5>
+            <h5>{% trans "Information de l'enseignant" %}:</h5>
             <hr>
-            <p>Matières : {{ profs.matieres }}</p>
+            <p>{% trans 'Matières' %}: {{ profs.matieres }}</p>
             
-            <p>Chef département : {{ profs.chief }}</p>
+            <p>{% trans 'Chef département' %}: {{ profs.chief }}</p>
             <p></p>
             
         </div>
     </div>
     <div class="col-md">
         <div class="card card-body">
-            <h5>Informations Personnelles :</h5>
+            <h5>{% trans 'Informations Personnelles' %}:</h5>
             <hr>
-            <p>Téléphone : {{ profs.contact_prof }}</p>
-            <p>Lieu de naissance : {{ profs.date_adhesion }}</p>
+            <p>{% trans 'Téléphone' %}: {{ profs.contact_prof }}</p>
+            <p>{% trans 'Lieu de naissance' %}: {{ profs.date_adhesion }}</p>
             <p></p>
             
         </div>

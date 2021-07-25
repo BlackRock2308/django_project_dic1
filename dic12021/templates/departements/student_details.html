@@ -1,5 +1,5 @@
 {% extends "home/base.html" %}
-
+{% load i18n%}
 {% block content %}
 
 
@@ -9,29 +9,29 @@
 <div class="row">
     <div class="col-md">
         <div class="card card-body" >
-            <h5>Etudiant :</h5>
+            <h5>{% trans 'Etudiant' %}:</h5>
             <hr>
-            <p>Prenom : {{ students.first_name }}</p>
-            <p>Nom : {{ students.last_name }}</p>
-            <p>Email : {{ students.mail_user }}</p>
+            <p>{% trans 'Prenom' %} : {{ students.first_name }}</p>
+            <p>{% trans 'Nom' %} : {{ students.last_name }}</p>
+            <p>{% trans 'Email' %}: {{ students.mail_user }}</p>
         </div>
     </div>
     <div class="col-md">
         <div class="card card-body">
-            <h5>Information de l'étudiant :</h5>
+            <h5>{% trans "Information de l'étudiant" %}:</h5>
             <hr>
-            <p>Departement : {{ students.depart }}</p>
-            <p>Classe : {{ students.ma_classe }}</p>
+            <p>{% trans 'Département' %} : {{ students.depart }}</p>
+            <p>{% trans 'Classe' %} : {{ students.ma_classe }}</p>
             <p></p>
             
         </div>
     </div>
     <div class="col-md">
         <div class="card card-body">
-            <h5>Informations Personnelles :</h5>
+            <h5>{% trans 'Informations Personnelles' %} :</h5>
             <hr>
-            <p>Date de naissance : {{ students.date_of_birth }}</p>
-            <p>Lieu de naissance : {{ students.place_of_birth }}</p>
+            <p>{% trans 'Date de naissance' %}: {{ students.date_of_birth }} </p>
+            <p>{% trans 'Lieu de naissance' %} : {{ students.place_of_birth }}</p>
             <p></p>
             
         </div>
