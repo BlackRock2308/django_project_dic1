@@ -25,7 +25,7 @@
                             <td>{{ student.last_name |upper }}</td>
                             <td>{{ student.mail_user }}</td>
                             <td>{{ student.date_of_birth }}</td>
-                            <td><a class="btn btn-sm btn-warning" href="#">More</a></td>
+                            <td><a class="btn btn-sm btn-warning" href="{% url 'dic2meca_details' student.id %}">More</a></td>
 
                         </tr>
                     {% endfor%}

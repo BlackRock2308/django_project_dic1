@@ -69,6 +69,14 @@ def dic1git(request):
 
     return render(request, "departements/dept_git/dic1.html", context)
 
+def dic1git_details(request, id):
+    
+    students = EtudiantModel.objects.filter(ma_classe = 'DIC1').filter(depart = 'GIT')
+    students = students.get(id = id)
+    context = {'students': students}
+
+    return render(request, "departements/student_details.html", context)
+
 def dic2git(request):
     
     students = EtudiantModel.objects.filter(ma_classe = 'DIC2').filter(depart = 'GIT')
@@ -76,12 +84,29 @@ def dic2git(request):
 
     return render(request, "departements/dept_git/dic2.html", context)
 
+def dic2git_details(request, id):
+    
+    students = EtudiantModel.objects.filter(ma_classe = 'DIC2').filter(depart = 'GIT')
+    students = students.get(id = id)
+    context = {'students': students}
+
+    return render(request, "departements/student_details.html", context)
+
 def dic3git(request):
     
     students = EtudiantModel.objects.filter(ma_classe = 'DIC3').filter(depart = 'GIT')
     context = {'students': students}
 
     return render(request, "departements/dept_git/dic3.html", context)
+
+def dic3git_details(request, id):
+    
+    students = EtudiantModel.objects.filter(ma_classe = 'DIC3').filter(depart = 'GIT')
+    students = students.get(id = id)
+    context = {'students': students}
+
+    return render(request, "departements/student_details.html", context)
+
 
 
 @login_required(login_url='login')
@@ -118,6 +143,14 @@ def dic1_meca(request):
 
     return render(request, "departements/dept_meca/dic1.html", context)
 
+def dic1meca_details(request, id):
+    
+    students = EtudiantModel.objects.filter(ma_classe = 'DIC1').filter(depart = 'GEM')
+    students = students.get(id = id)
+    context = {'students': students}
+
+    return render(request, "departements/student_details.html", context)
+
 def dic2_meca(request):
     
     students = EtudiantModel.objects.filter(ma_classe = 'DIC2').filter(depart = 'GEM')
@@ -125,12 +158,29 @@ def dic2_meca(request):
 
     return render(request, "departements/dept_meca/dic2.html", context)
 
+def dic2meca_details(request, id):
+    
+    students = EtudiantModel.objects.filter(ma_classe = 'DIC2').filter(depart = 'GEM')
+    students = students.get(id = id)
+    context = {'students': students}
+
+    return render(request, "departements/student_details.html", context)
+
+
 def dic3_meca(request):
     
     students = EtudiantModel.objects.filter(ma_classe = 'DIC3').filter(depart = 'GEM')
     context = {'students': students}
 
     return render(request, "departements/dept_meca/dic3.html", context)
+
+def dic3meca_details(request, id):
+    
+    students = EtudiantModel.objects.filter(ma_classe = 'DIC3').filter(depart = 'GEM')
+    students = students.get(id = id)
+    context = {'students': students}
+
+    return render(request, "departements/student_details.html", context)
 
 @login_required(login_url='login')
 def departementMeca(request):
@@ -166,6 +216,14 @@ def dic1_civil(request):
 
     return render(request, "departements/dept_civil/dic1.html", context)
 
+def dic1civil_details(request, id):
+    
+    students = EtudiantModel.objects.filter(ma_classe = 'DIC1').filter(depart = 'GC')
+    students = students.get(id = id)
+    context = {'students': students}
+
+    return render(request, "departements/student_details.html", context)
+
 def dic2_civil(request):
     
     students = EtudiantModel.objects.filter(ma_classe = 'DIC2').filter(depart = 'GC')
@@ -173,12 +231,28 @@ def dic2_civil(request):
 
     return render(request, "departements/dept_civil/dic2.html", context)
 
+def dic2civil_details(request, id):
+    
+    students = EtudiantModel.objects.filter(ma_classe = 'DIC2').filter(depart = 'GC')
+    students = students.get(id = id)
+    context = {'students': students}
+
+    return render(request, "departements/student_details.html", context)
+
 def dic3_civil(request):
     
     students = EtudiantModel.objects.filter(ma_classe = 'DIC3').filter(depart = 'GC')
     context = {'students': students}
 
     return render(request, "departements/dept_civil/dic3.html", context)
+
+def dic3civil_details(request, id):
+    
+    students = EtudiantModel.objects.filter(ma_classe = 'DIC3').filter(depart = 'GC')
+    students = students.get(id = id)
+    context = {'students': students}
+
+    return render(request, "departements/student_details.html", context)
 
 @login_required(login_url='login')
 def departementCivil(request):
