@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from dic12021.admin import my_admin
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
+    path('myadmin/', my_admin.urls, name='myadmin'),
     path("", include("home.urls")),
-    path("", include("departements.urls"))
+    path("", include("departements.urls")),
+    path("", include('rest_framework.urls'))
 ]

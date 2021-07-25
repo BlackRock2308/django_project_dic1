@@ -1,8 +1,75 @@
 {% extends "home/base.html" %}
 
 {% block content %}
-{% include 'departements/menu_nav_dep.html' %}
 
-<h1> {{ aero }}</h1>
+
+
+    <div class="row">
+        <div class="col-md-12">
+           
+            <h5 class="text-center">BIENVENUE AU DEPARTEMENT {{ depart }} </h5>
+           
+            
+            <div class="card card-body">
+                <span class="btn btn-primary btn-sm btn-block" style="background-color:#b2681e;">Chef du département</span>
+                <table class="table table-sm table-warning">
+                    <tr>    
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Mail</th>
+                        <th>Phone</th>
+                        <th>More</th>
+                    </tr>
+                    {% for enseignant in enseignants %}  
+                        <tr>  
+                            <td>{{ enseignant.first_name }}</td>
+                            <td>{{ enseignant.last_name |upper }}</td>
+                            <td>{{ enseignant.mail_user }}</td>
+                            <td>{{ enseignant.contact_prof }}</td>
+                            <td><a class="btn btn-sm btn-warning" href="#">More</a></td>
+                        </tr>
+                    {% endfor%}
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    {% include 'departements/dept_aero/menu_nav_dep_aero.html' %}
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12"> 
+               
+                <div class="card card-body">
+                    <span class="btn btn-primary btn-sm btn-block" style="background-color:#b2681e;">Enseignant du département </span>
+                    <table class="table table-sm table-warning">
+                        <tr>
+                           
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Mail</th>
+                            <th>Contact</th>
+                            <th>View More</th>
+                        </tr>
+                        {% for prof in profs %}  
+                            <tr>
+                                
+                                <td>{{ prof.first_name }}</td>
+                                <td>{{ prof.last_name |upper }}</td>
+                                <td>{{ prof.mail_user }}</td>
+                                <td>{{ prof.contact_prof }}</td>
+                                <td><a class="btn btn-sm btn-warning" href="#">More</a></td>
+                            </tr>
+                        {% endfor%}
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 
 {% endblock %}
+

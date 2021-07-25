@@ -17,13 +17,15 @@
             Départements
           </a>
           <div class="dropdown-menu bg-warning"  aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{% url 'civil' %}" >Génie civil</a>
+            <a class="dropdown-item " href="{% url 'meca' %}" >GENIE ELECTROMECANIQUE</a> 
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{% url 'git' %}">Génie informatique</a>
+            <a class="dropdown-item" href="{% url 'git' %}">GENIE INFORMATIQUE ET TELECOM</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{% url 'meca' %}" >Génie electro</a>
+            <a class="dropdown-item" href="{% url 'civil' %}" >GENIE CIVIL</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{% url 'aero' %}">Génie aéro</a>
+            <a class="dropdown-item" href="{% url 'aero' %}"> AERONAUTIQUE</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#"> TRONC COMMUN</a>
           </div>
         </li>
         <li class="nav-item active">
@@ -35,8 +37,20 @@
         <li class="nav-item active">
           <a class="nav-link" href="{% url 'about' %}">A propos<span class="sr-only">(current)</span></a>
         </li>
+
+        <li class="nav-item active" style="padding-left: 10px;">
+          <a class="nav-link" href="#"><i class="fa fa-user"></i>Fr</a>
+        </li>
+        
+        <li class="nav-item active" style="padding-left: 10px;">
+          <a class="nav-link" href="#"><i class="fa fa-user"></i>An</a>
+        </li>
       </ul>
+      
+        
+      
       {% if user.is_authenticated %}
+      <li style="list-style: none; margin-right: 20px;">{{ user.username }}</li>
         <div class="form-inline my-2 my-lg-0">
           <button class="btn btn-outline-warning mr-sm-3"  >
             <a style="color: black; text-decoration: none;" href="{% url 'logout' %}">DECONNEXION</a>
@@ -44,13 +58,16 @@
         </div>
       {% else %}
       <div class="form-inline my-2 my-lg-0">
-        <button class="btn btn-outline-warning mr-sm-3"  type="submit" > <a style="color: black; text-decoration: none;" href="{% url 'login' %}">CONNEXION</a></button>
+        <button class="btn btn-outline-warning mr-sm-3" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>  
       </div>
+      <!-- <div class="form-inline my-2 my-lg-0">
+        <button class="btn btn-outline-warning mr-sm-3"  type="submit" > <a style="color: black; text-decoration: none;" href="{% url 'login' %}">CONNEXION</a></button>
+      </div> -->
       <div class="form-inline my-2 my-lg-0">
         <button class="btn btn-outline-warning mr-sm-3 my-1 my-sm-6" > <a style="color: black; text-decoration: none;" href="{% url 'register' %}">INSCRIPTION</a></button>
       </div>
       {% endif %}
-      
-      
+
+      {% include 'home/connexion.html' %}      
     </div>
   </nav>

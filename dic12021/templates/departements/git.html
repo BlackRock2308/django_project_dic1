@@ -3,89 +3,71 @@
 {% block content %}
 
 
-<div class="container">
 
-<div class="row">
-    <div class="col-md-12">
-        {% for enseignant in enseignants %} 
-        <h5 class="text-center">BIENVENUE AU DEPARTEMENT{{ depart }} </h5>
-        {% endfor%}
-        <hr>
-        <div class="card card-body">
-            <a class="btn btn-primary btn-sm btn-block" href="">Chef du département</a>
-            <table class="table table-sm table-dark">
-                <tr>
-                    <th></th>
-                    <th>Nom</th>
-                    <th>Prénom</th>
-                    <th>Mail</th>
-                    <th>Phone</th>
-                </tr>
-                {% for enseignant in enseignants %}  
-                    <tr>
-                        <td><a class="btn btn-sm btn-info" href="#">More</a></td>
-                        <td>{{ enseignant.first_name }}</td>
-                        <td>{{ enseignant.last_name |upper }}</td>
-                        <td>{{ enseignant.mail_user }}</td>
-                        <td>{{ enseignant.contact_prof }}</td>
+    <div class="row">
+        <div class="col-md-12">
+           
+            <h5 class="text-center">BIENVENUE AU DEPARTEMENT {{ depart }} </h5>
+            
+            
+            <div class="card card-body">
+                <span class="btn btn-primary btn-sm btn-block" style="background-color:#b2681e;">Chef du département</span>
+                <table class="table table-sm table-warning">
+                    <tr>    
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Mail</th>
+                        <th>Phone</th>
+                        <th>More</th>
                     </tr>
-                {% endfor%}
-            </table>
+                    {% for enseignant in enseignants %}  
+                        <tr>  
+                            <td>{{ enseignant.first_name }}</td>
+                            <td>{{ enseignant.last_name |upper }}</td>
+                            <td>{{ enseignant.mail_user }}</td>
+                            <td>{{ enseignant.contact_prof }}</td>
+                            <td><a class="btn btn-sm btn-warning" href="#">More</a></td>
+                        </tr>
+                    {% endfor%}
+                </table>
+            </div>
         </div>
     </div>
 
 
-<!-- <div class="row">
-    <div class="col-md-6">
-        <h5 class="text-center">DEPARTEMENTS </h5>
-        <hr>
-        <div class="card card-body">
-            <a class="btn btn-primary btn-sm btn-block" href="">Départements</a>
-            <table class="table table-sm">
-                <tr>
-                    <th></th>
-                    <th>Nom</th>
-                    <th>Mail</th>
-                    <th>Phone</th>
-                </tr>
-                {% for departement in departements %}
-                    <tr>
-                        <td><a class="btn btn-sm btn-info" href="#">More</a></td>
-                        <td>{{ departement.nom |upper}}</td>
-                        <td>{{ departement.email }}</td>
-                        <td>{{ departement.telephone }}</td>
-                    </tr>
-                {% endfor%}
-            </table>
+    {% include 'departements/menu_nav_dep.html' %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12"> 
+               
+                <div class="card card-body">
+                    <span class="btn btn-primary btn-sm btn-block" style="background-color:#b2681e;">Enseignant du département </span>
+                    <table class="table table-sm table-warning">
+                        <tr>
+                           
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Mail</th>
+                            <th>Contact</th>
+                            <th>View More</th>
+                        </tr>
+                        {% for prof in profs %}  
+                            <tr>
+                                
+                                <td>{{ prof.first_name }}</td>
+                                <td>{{ prof.last_name |upper }}</td>
+                                <td>{{ prof.mail_user }}</td>
+                                <td>{{ prof.contact_prof }}</td>
+                                <td><a class="btn btn-sm btn-warning" href="#">More</a></td>
+                            </tr>
+                        {% endfor%}
+                    </table>
+                </div>
+            </div>
         </div>
+
     </div>
 
-    <div class="col-md-6">
-        <h5 class="text-center">UE </h5>
-        <hr>
-        <div class="card card-body">
-            <a class="btn btn-primary btn-sm btn-block" href="">Create UE</a>
-            <table class="table table-sm">
-                <tr>
-                    <th> </th>
-                    <th>Code UE</th>
-                    <th>Nom UE</th>
-                    <th>CLasse UE</th>
-                </tr>
-                {% for ue in ues %}
-                    <tr>
-                        <td><a class="btn btn-sm btn-info" href="#">View</a></td>
-                        <td>{{ ue.code_ue}}</td>
-                        <td>{{ ue.nom_ue }}</td>
-                        <td>{{ ue.id_classe }}</td>
-                    </tr>
-                {% endfor%}
-            </table>
-        </div>
-    </div>
-</div> -->
-
-</div>
-{% include 'departements/menu_nav_dep.html' %}
 
 {% endblock %}

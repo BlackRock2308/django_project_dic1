@@ -1,0 +1,37 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+
+{% include 'departements/dept_civil/menu_nav_dep_civil.html' %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12"> 
+           
+            <div class="card card-body">
+                <span class="btn btn-primary btn-sm btn-block" style="background-color:#b2681e;">Liste des élèves de la DIC3 </span>
+                <table class="table table-sm table-warning">
+                    <tr>
+                        
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Mail</th>
+                        <th>Date of birth</th>
+                        <th>View Details</th>
+                    </tr>
+                    {% for student in students %}  
+                        <tr>
+                            <td>{{ student.first_name }}</td>
+                            <td>{{ student.last_name |upper }}</td>
+                            <td>{{ student.mail_user }}</td>
+                            <td>{{ student.date_of_birth }}</td>
+                            <td><a class="btn btn-sm btn-warning" href="#">More</a></td>
+
+                        </tr>
+                    {% endfor%}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

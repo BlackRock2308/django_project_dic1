@@ -1,8 +1,12 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from .forms import CreateUserForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+
+
+
 # Create your views here.
 
 
@@ -28,6 +32,7 @@ def registerPage(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
+            
             user = form.cleaned_data.get('username')
             message = messages.success(request, "Your account has been created successfully for " + user)
             
@@ -35,6 +40,7 @@ def registerPage(request):
 
     context = {"form" : form}
     return render(request, "home/register.html", context)
+    
 
 def loginPage(request):
     if request.method == 'POST':
@@ -48,7 +54,7 @@ def loginPage(request):
             return redirect('index')
     
     context = {}
-    return render(request, "home/login.html", context)
+    return render(request, "home/index.html", context)
 
 
 def logoutUser(request):

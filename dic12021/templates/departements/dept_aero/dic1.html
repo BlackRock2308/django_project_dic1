@@ -1,0 +1,61 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+
+{% include 'departements/dept_aero/menu_nav_dep_aero.html' %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12"> 
+           
+            <div class="card card-body">
+                <span class="btn btn-primary btn-sm btn-block" style="background-color:#b2681e;">Liste des élèves de la DIC1 </span>
+                <table class="table table-sm table-warning">
+                    <tr>
+                        
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Mail</th>
+                        <th>Date of birth</th>
+                        <th>View Details</th>
+                    </tr>
+                    {% for student in students %}  
+                        <tr>
+                            <td>{{ student.first_name }}</td>
+                            <td>{{ student.last_name |upper }}</td>
+                            <td>{{ student.mail_user }}</td>
+                            <td>{{ student.date_of_birth }}</td>
+                            <td><a class="btn btn-sm btn-warning" href="#">More</a></td>
+
+                        </tr>
+                    {% endfor%}
+                </table>
+                
+
+            </div>
+            
+        </div>
+                <!-- {% if students.has_other_pages %}
+                    <ul class="pagination">
+                        {% if students.has_previous %}
+                        <li><a href="?page={{ students.previous_page_number }}">&laquo;</a></li>
+                        {% else %}
+                        <li class="disabled"><span>&laquo;</span></li>
+                        {% endif %}
+                        {% for i in students.paginator.page_range %}
+                        {% if students.number == i %}
+                            <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                        {% else %}
+                            <li><a href="?page={{ i }}">{{ i }}</a></li>
+                        {% endif %}
+                        {% endfor %}
+                        {% if students.has_next %}
+                        <li><a href="?page={{ students.next_page_number }}">&raquo;</a></li>
+                        {% else %}
+                        <li class="disabled"><span>&raquo;</span></li>
+                        {% endif %}
+                    </ul>
+                {% endif %} -->
+    </div>
+</div>
+{% endblock %}

@@ -1,6 +1,6 @@
 from django.contrib import admin
-
 from .models import *
+from dic12021.admin import my_admin
 
 # Register your models here.
 
@@ -20,6 +20,8 @@ admin.site.register(UniteEnseignementModel)
 admin.site.register(MatiereModel)
 admin.site.register(InscriptionEleve)
 admin.site.register(EnseignantModel )
+
+my_admin.register(DepartementModel)
 
 
 #Change the navbar dear

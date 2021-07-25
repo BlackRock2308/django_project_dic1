@@ -1,7 +1,6 @@
 from typing import Text
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.deletion import CASCADE, SET_NULL
 from django.db.models.fields.related import OneToOneField
 
 
@@ -32,6 +31,10 @@ class ClasseModel(models.Model):
     def __str__(self) -> str:
         return f"{self.nom_classe} {self.departement}"
 
+    class Meta :
+        verbose_name = "Classe"
+       
+
 
 class UniteEnseignementModel(models.Model):
     code_ue = models.CharField(max_length=300,unique=True, null=True)
@@ -40,9 +43,20 @@ class UniteEnseignementModel(models.Model):
 
     def __str__(self) -> str:
         return self.nom_ue
+
+    class Meta :
+        verbose_name = "Unité d'Enseignement"
+        verbose_name_plural = "Unités d'Enseignement"
     
 
 class MatiereModel(models.Model):
+    CATEGORY = (
+            ('GIT', 'GIT'),
+            ('GEM', 'GEM'),
+            ('AERO', 'AERO'),
+            ('GC', 'GC'),
+            ('TC', 'TC')
+        )
     code_matiere = models.CharField(max_length=300,unique=True)
     nom_matiere = models.CharField(max_length=300)
     coefficient = models.IntegerField(null=True)
@@ -50,13 +64,18 @@ class MatiereModel(models.Model):
     quota_horaire = models.IntegerField(null= True)
     description_matiere = models.TextField(null= True)
     unite_enseignement = models.ForeignKey(UniteEnseignementModel, on_delete=models.CASCADE)
+    classe = models.CharField(max_length = 200, null = True, choices = CATEGORY)
+
 
     def __str__(self) -> str:
         return self.nom_matiere
 
+    class Meta :
+        verbose_name = "Matiere"
+
 
 class Utilisateur(models.Model):  # COMM0N
-    user = models.OneToOneField(User, null= True, on_delete=models.CASCADE)
+    #user = models.OneToOneField(User, null= True, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=300, null=True)
     last_name = models.CharField(max_length=300, null=True)
     mail_user =  models.EmailField(max_length=300, null= True)
@@ -69,25 +88,57 @@ class Utilisateur(models.Model):  # COMM0N
 
 
 class EtudiantModel(Utilisateur):  # STUDENT
+    CATEGORY = (
+            ('GIT', 'GIT'),
+            ('GEM', 'GEM'),
+            ('GC', 'GC'),
+            ('AERO', 'AERO'),
+            ('TC', 'TC')
+        )
+    LEVEL = (
+            ('TC1', 'TC1'),
+            ('TC2', 'TC2'),
+            ('DIC1', 'DIC1'),
+            ('DIC2', 'DIC2'),
+            ('DIC3', 'DIC3')
+        )
+    #user = models.OneToOneField(User, null= True, on_delete=models.CASCADE)
     date_of_birth = models.DateField(null=True)
     place_of_birth = models.CharField(max_length=300, null=True)
+    depart = models.CharField(max_length = 200, null = True, choices = CATEGORY)
+    ma_classe = models.CharField(max_length = 200, null = True, choices = LEVEL )
+    
+    class Meta :
+        verbose_name = "Etudiant"
 
   
 class EnseignantModel(Utilisateur):  # TEACHER
+    CATEGORY = (
+            ('GIT', 'GIT'),
+            ('GEM', 'GEM'),
+            ('GC', 'GC'),
+            ('AERO', 'AERO'),
+            ('TC', 'TC'),
+            ('----', '----')
+        )
     contact_prof = models.CharField(max_length=150)
     date_adhesion = models.DateField(null= True)
     chef_departement = models.BooleanField(default=False)
     departements = models.ManyToManyField(DepartementModel)
     matieres = models.ManyToManyField(MatiereModel)
+    chief = models.CharField(max_length = 200, null = True, choices = CATEGORY)
+
+    class Meta :
+        verbose_name = "Enseignant"
 
 
 class InscriptionEleve(models.Model):
     Id_etudiant = models.ForeignKey(EtudiantModel, on_delete= models.CASCADE)
     Id_classe = models.ForeignKey(ClasseModel, on_delete=models.CASCADE)
-    annee_scolaire = models.DateField()
+    annee_scolaire = models.CharField(max_length=300, null=True, default="2020-2021")
 
     def __str__(self) -> str:
-        return self.annee_scolaire
+        return f"{self.Id_etudiant} {self.annee_scolaire} " 
 
 
 
