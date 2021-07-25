@@ -6,6 +6,8 @@ from .views import *
 
 urlpatterns = [
     path("departements/git", departementGit, name = "git"),
+    path("departements/git/<int:id>/", enseignant_git_details, name = "enseignant_git_details"),
+
 
     path("departement/civil", departementCivil, name = "civil"),
     path("departement/civil/dic1", dic1_civil, name = "dic1_civil"),
@@ -17,6 +19,7 @@ urlpatterns = [
     path("departement/Middle_bar/module_civil", module_civil, name="module_civil"),
 
     path("departements/meca", departementMeca, name = "meca"),
+    path("departements/meca/<int:id>/", enseignant_meca_details, name = "enseignant_meca_details"),
     path("departements/meca/dic1", dic1_meca, name = "dic1_meca"),
     path("departement/meca/dic1/<int:id>/", dic1meca_details, name="dic1meca_details"),
     path("departements/meca/dic2", dic2_meca, name = "dic2_meca"),

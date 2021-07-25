@@ -26,7 +26,7 @@
                             <td>{{ enseignant.last_name |upper }}</td>
                             <td>{{ enseignant.mail_user }}</td>
                             <td>{{ enseignant.contact_prof }}</td>
-                            <td><a class="btn btn-sm btn-warning" href="#">More</a></td>
+                            <td><a class="btn btn-sm btn-warning" href="{% url 'enseignant_git_details' enseignant.id %}">More</a></td>
                         </tr>
                     {% endfor%}
                 </table>
@@ -59,7 +59,7 @@
                                 <td>{{ prof.last_name |upper }}</td>
                                 <td>{{ prof.mail_user }}</td>
                                 <td>{{ prof.contact_prof }}</td>
-                                <td><a class="btn btn-sm btn-warning" href="#">More</a></td>
+                                <td><a class="btn btn-sm btn-warning" href="{% url 'enseignant_git_details' prof.id %}">More</a></td>
                             </tr>
                         {% endfor%}
                     </table>

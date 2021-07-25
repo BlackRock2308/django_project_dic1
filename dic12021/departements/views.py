@@ -65,7 +65,7 @@ def dic1git(request):
     except EmptyPage:
         students = paginator.page(paginator.num_pages)
 
-    context = {'students': students}
+    context = {'students': students, "classe" : "DIC1"}
 
     return render(request, "departements/dept_git/dic1.html", context)
 
@@ -80,7 +80,7 @@ def dic1git_details(request, id):
 def dic2git(request):
     
     students = EtudiantModel.objects.filter(ma_classe = 'DIC2').filter(depart = 'GIT')
-    context = {'students': students}
+    context = {'students': students, "classe" : "DIC2"}
 
     return render(request, "departements/dept_git/dic2.html", context)
 
@@ -95,7 +95,7 @@ def dic2git_details(request, id):
 def dic3git(request):
     
     students = EtudiantModel.objects.filter(ma_classe = 'DIC3').filter(depart = 'GIT')
-    context = {'students': students}
+    context = {'students': students, "classe" : "DIC3"}
 
     return render(request, "departements/dept_git/dic3.html", context)
 
@@ -125,6 +125,15 @@ def departementGit(request):
             }
     return render(request, "departements/git.html", context)
 
+def enseignant_git_details(request, id):
+    profs = EnseignantModel.objects.filter(departements = 1) #1 represent
+    profs = profs.get(id = id)
+
+    context = {
+            "profs": profs,
+            }
+    return render(request, "departements/enseignant_details.html", context)
+
 # End of views for GIT department
 
 # All my views for GEM department
@@ -139,7 +148,7 @@ def module_gem(request):
 def dic1_meca(request):
     
     students = EtudiantModel.objects.filter(ma_classe = 'DIC1').filter(depart = 'GEM')
-    context = {'students': students}
+    context = {'students': students, "classe" : "DIC1"}
 
     return render(request, "departements/dept_meca/dic1.html", context)
 
@@ -154,7 +163,7 @@ def dic1meca_details(request, id):
 def dic2_meca(request):
     
     students = EtudiantModel.objects.filter(ma_classe = 'DIC2').filter(depart = 'GEM')
-    context = {'students': students}
+    context = {'students': students, "classe" : "DIC2"}
 
     return render(request, "departements/dept_meca/dic2.html", context)
 
@@ -170,7 +179,7 @@ def dic2meca_details(request, id):
 def dic3_meca(request):
     
     students = EtudiantModel.objects.filter(ma_classe = 'DIC3').filter(depart = 'GEM')
-    context = {'students': students}
+    context = {'students': students, "classe" : "DIC3"}
 
     return render(request, "departements/dept_meca/dic3.html", context)
 
@@ -197,6 +206,16 @@ def departementMeca(request):
             }
     return render(request, "departements/meca.html", context)
 
+def enseignant_meca_details(request, id):
+    profs = EnseignantModel.objects.filter(departements = 2) #1 represent
+    profs = profs.get(id = id)
+
+    context = {
+           
+            "profs": profs,
+            }
+    return render(request, "departements/enseignant_details.html", context)
+
 # End of views for GEM department
 
 
@@ -212,7 +231,7 @@ def module_civil(request):
 def dic1_civil(request):
     
     students = EtudiantModel.objects.filter(ma_classe = 'DIC1').filter(depart = 'GC')
-    context = {'students': students}
+    context = {'students': students, "classe" : "DIC1"}
 
     return render(request, "departements/dept_civil/dic1.html", context)
 
@@ -227,7 +246,7 @@ def dic1civil_details(request, id):
 def dic2_civil(request):
     
     students = EtudiantModel.objects.filter(ma_classe = 'DIC2').filter(depart = 'GC')
-    context = {'students': students}
+    context = {'students': students, "classe" : "DIC2"}
 
     return render(request, "departements/dept_civil/dic2.html", context)
 
@@ -242,7 +261,7 @@ def dic2civil_details(request, id):
 def dic3_civil(request):
     
     students = EtudiantModel.objects.filter(ma_classe = 'DIC3').filter(depart = 'GC')
-    context = {'students': students}
+    context = {'students': students, "classe" : "DIC3"}
 
     return render(request, "departements/dept_civil/dic3.html", context)
 

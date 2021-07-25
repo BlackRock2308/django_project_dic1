@@ -9,19 +9,20 @@
 <div class="row">
     <div class="col-md">
         <div class="card card-body" >
-            <h5>Etudiant :</h5>
+            <h5>Enseignant :</h5>
             <hr>
-            <p>Prenom : {{ students.first_name }}</p>
-            <p>Nom : {{ students.last_name }}</p>
-            <p>Email : {{ students.mail_user }}</p>
+            <p>Prenom : {{ profs.first_name }}</p>
+            <p>Nom : {{ profs.last_name }}</p>
+            <p>Email : {{ profs.mail_user }}</p>
         </div>
     </div>
     <div class="col-md">
         <div class="card card-body">
-            <h5>Information de l'étudiant :</h5>
+            <h5>Information de l'enseignant :</h5>
             <hr>
-            <p>Departement : {{ students.depart }}</p>
-            <p>Classe : {{ students.ma_classe }}</p>
+            <p>Matières : {{ profs.matieres }}</p>
+            
+            <p>Chef département : {{ profs.chief }}</p>
             <p></p>
             
         </div>
@@ -30,8 +31,8 @@
         <div class="card card-body">
             <h5>Informations Personnelles :</h5>
             <hr>
-            <p>Date de naissance : {{ students.date_of_birth }}</p>
-            <p>Lieu de naissance : {{ students.place_of_birth }}</p>
+            <p>Téléphone : {{ profs.contact_prof }}</p>
+            <p>Lieu de naissance : {{ profs.date_adhesion }}</p>
             <p></p>
             
         </div>
@@ -40,18 +41,7 @@
 
 <br>
 
-<!-- <div class="row">
-    <div class="col">
-        <div class="card card-body">
-            <form method="GET">
 
-                
-                <button class="btn btn-primary" type="submit">Search</button>
-
-            </form>
-        </div>
-    </div>
-</div> -->
 
 <br>
 
